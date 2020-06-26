@@ -1,0 +1,37 @@
+title part0.6 Single Page App POST Request
+
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
+
+server-->browser: text/html
+
+server-->browser: main.css
+
+server-->browser: main.js
+
+server-->browser: [{ application/json data }]
+
+note over browser:
+browser starts executing js-code
+that requests JSON data from server 
+end note
+
+note over browser:
+browser executes the event handler
+that renders notes to display
+end note
+
+note over browser:
+method POST is executed after user entered something
+user input is send to the server
+end note
+
+browser ->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+
+note over server:
+server receives user input via POST request, req.body
+data is saved on the server via push() method
+end note
+
+note over browser:
+user data is appended via DOM
+end note
