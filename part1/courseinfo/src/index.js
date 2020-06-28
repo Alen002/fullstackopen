@@ -1,42 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-/* const App = () => {
-  const course = 'Half Stack Application Development';
-  const part1 = 'Fundamentals of React';
 
-  const exercises1 = 10;
-  const part2 = 'Using props to pass data';
-
-  const exercises2 = 7;
-  const part3 = 'State of a component';
-  const exercises3 = 14;
-
-  return (
-    <div>
-      <h1>{course}</h1>
-      <p>{part1} {exercises1}</p>
-      <p>{part2} {exercises2}</p>
-      <p>{part3} {exercises3}</p>
-    </div>
-  );
-}; */
-
-// Component Header
+// Header Component
 const Header = (props) => (
   <h1>{props.course}</h1>
 );
 
-// Component Content
-const Content = (props) => {
+// Content Component
+const Content = () => {
+const part1 = 'Fundamentals of React';
+const part2 = 'Using props to pass data';
+const part3 = 'State of a component';
+const exercises1 = 10;
+const exercises2 = 7;
+const exercises3 = 14; 
+
   return (
   <>
-    <p>{props.part} {props.exercises}</p>
+    <Part part = {part1} exercises = {exercises1} />
+    <Part part = {part2} exercises = {exercises2} />
+    <Part part = {part3} exercises = {exercises3} />
   </>
   );
 };
 
-// Component Total
+// Part Component
+const Part = (props) => (
+    <>
+      <p>{props.part} {props.exercises}</p>
+    </>
+  );
+
+
+// Total Component
 const Total = (props) => (
   <p>Number of exercises {props.exercises1 + props.exercises2 + props.exercises3}</p>
 );
@@ -44,19 +41,13 @@ const Total = (props) => (
 // Root Component App
 const App = () => {
 const course = 'Half Stack Application Development';
-const part1 = 'Fundamentals of React';
-const part2 = 'Using props to pass data';
-const part3 = 'State of a component';
 const exercises1 = 10;
 const exercises2 = 7;
-const exercises3 = 14;
-
+const exercises3 = 14; 
 return (
   <>
     <Header course = {course} />
-    <Content part = {part1} exercises = {exercises1} />
-    <Content part = {part2} exercises = {exercises2} />
-    <Content part = {part3} exercises = {exercises3} />
+    <Content />
     <Total exercises1 = {exercises1} exercises2 = {exercises2} exercises3 = {exercises3} />
   </>
 );
