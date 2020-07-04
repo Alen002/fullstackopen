@@ -12,12 +12,12 @@ const UserFeedback = ({state, criterion}) => {
   );
 };
 
-
 // App Component
 const App = () => {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
+  const result = 0;
 
   return (
     <div>
@@ -30,6 +30,11 @@ const App = () => {
       Good: {good}<br/>
       Neutral: {neutral}<br/>
       Bad: {bad}<br/>
+      <p/>
+      All: {good + neutral + bad}<br/>
+      Average: {(good - bad)/(good + neutral + bad)}<br/>
+      Positive: {(good/(good + neutral + bad)).toFixed(2)*100 + '%'}<br/>
+
     </div>
   );
 };
