@@ -6,17 +6,6 @@ const Header = (props) => (
   <h1>{props.course}</h1>
 );
 
-/* // Content Component
-const Content = () => {
-  return (
-  <>
-    <Part part = {part1} exercises = {part1.exercises} />
-    <Part part = {part2} exercises = {part2.exercises} />
-    <Part part = {part3} exercises = {part3.exercises} />
-  </>
-  );
-}; */
-
 // Part Component
 const Part = (props) => (
     <>
@@ -56,7 +45,6 @@ return (
     <Part part = {course.parts[1].name} exercises = {course.parts[1].exercises} />
     <Part part = {course.parts[2].name} exercises = {course.parts[2].exercises} />
     <Total exercises1 = {course.parts[0].exercises} exercises2 = {course.parts[1].exercises} exercises3 = {course.parts[2].exercises} />
-    
   </>
 );
 };
