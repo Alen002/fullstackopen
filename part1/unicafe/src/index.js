@@ -10,6 +10,15 @@ const UserFeedback = ({state, criterion}) => {
   );
 };
 
+// Statistic Component
+const Statistic = (props) => {
+  return (
+    <>
+      {props.text}: {props.value}<br/>
+    </>
+  );
+};
+
 // Statistics Component
 const Statistics = ({stateGood, stateNeutral, stateBad}) => {
   const resultsAll = stateGood + stateNeutral + stateBad;
@@ -17,13 +26,13 @@ const Statistics = ({stateGood, stateNeutral, stateBad}) => {
   const resultsPositive = (stateGood/(stateGood + stateNeutral + stateBad)).toFixed(2)*100 + '%'
   return (
     <>
-      Good: {stateGood}<br/>
-      Neutral: {stateNeutral}<br/>
-      Bad: {stateBad}<br/>
-      <p/>
-      All: {resultsAll}<br/>
-      Average: {resultsAverage}<br/>
-      Positive: {resultsPositive}<br/>
+      <Statistic text='Good' value={stateGood} />
+      <Statistic text='Neutral' value={stateNeutral} />
+      <Statistic text='Bad' value={stateBad} />
+      <br/>
+      <Statistic text='All' value={resultsAll} />
+      <Statistic text='Average' value={resultsAverage} />
+      <Statistic text='Positive' value={resultsPositive} />
     </>
   );
 };
