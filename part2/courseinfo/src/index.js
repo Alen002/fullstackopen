@@ -34,12 +34,11 @@ const App = () => {
         id: 3
       }
     ]
-  }
-
-    
+  };
 
   return (
     <>
+      <h2>Half Stack application development</h2>
       <Course courses={course} />
     </>
   );
