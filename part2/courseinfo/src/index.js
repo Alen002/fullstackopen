@@ -1,19 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-
-
-
-const Course = (props) => {
-  const courses = props.courses.parts;
-  
-    return (
-      <>
-        {courses.map((value, i) =><p key={i}>{value.name} {value.exercises}</p>)}
-        <h4>Total of {courses.reduce((sum, end) => sum + end.exercises, 0)} exercises</h4>
-      </>                      
-    );  
-};
+import Course from './course'
 
 const App = () => {
   const courses = [
@@ -64,7 +51,7 @@ const App = () => {
   return (
     <>
       <h1>Web development curriculum</h1>
-      <h2>Half Stack application development</h2>
+      <h2>Half Stack application development</h2>  
       {courses.map(course =>
         <Course key={course.id} courses={course} />
       )}
